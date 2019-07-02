@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
       if(email == ""||password== "")return;
         Toast.makeText(this,"Login in Progress",Toast.LENGTH_SHORT).show();
         // TODO: Use FirebaseAuth to sign in with email & password
-        mAuth.createUserWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+        mAuth.signInWithEmailAndPassword(email,password).addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 Log.d("FlashChat","sign in = "+ task.isSuccessful());
